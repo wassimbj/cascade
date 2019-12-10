@@ -25,11 +25,16 @@ const UserCard: React.FC<UserCardProps> = props => {
           Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus.
         </p>
         <div className="social">
-          {props.social.map((soc, index2) => {
+          {props.social.map((soc, index) => {
             const icon =
               soc.name === "facebook" ? "facebook-official" : soc.name;
             return (
-              <a href={soc.url} target="_blank" rel="noopener noreferrer">
+              <a
+                key={index.toString()}
+                href={soc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className={`fa fa-${icon}`}></i>
               </a>
             );
