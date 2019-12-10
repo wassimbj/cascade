@@ -2,6 +2,7 @@ export const people = [
   {
     name: "Ravi Teja",
     position: "Software Development Manager",
+    category: ["Engineering"],
     social: [
       {
         name: "twitter",
@@ -17,6 +18,7 @@ export const people = [
   {
     name: "Chinmaya Pati",
     position: "Software Engineer",
+    category: ["Engineering"],
     social: [
       {
         name: "twitter",
@@ -36,6 +38,7 @@ export const people = [
   {
     name: "Ravi Teja",
     position: "Software Development Manager",
+    category: ["Engineering"],
     social: [
       {
         name: "twitter",
@@ -51,6 +54,7 @@ export const people = [
   {
     name: "Muneer Syed",
     position: "DevOps Engineer",
+    category: ["DevOps"],
     social: [
       {
         name: "github",
