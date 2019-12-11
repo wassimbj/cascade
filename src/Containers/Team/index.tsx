@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./App.scss";
+import "./Team.scss";
 
 //! To be removed
-import { people } from "../../config/constants";
+import { people } from "../../constants/people";
 //! END
 import UserCard from "../../components/UserCard";
 import Categories from "../../components/Categories";
@@ -13,7 +13,7 @@ interface AppState {
   activeTeam: string;
 }
 
-class App extends React.Component<AppProps, AppState> {
+class Team extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
@@ -53,4 +53,4 @@ class App extends React.Component<AppProps, AppState> {
   }
 }
 
-export default App;
+export default Team;
