@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./Team.scss";
+import "./Event.scss";
 
 //! To be removed
-import { people } from "../../constants/data";
+import { events, tags } from "../../constants/data";
 //! END
 import UserCard from "../../components/UserCard";
 import Categories from "../../components/Categories";
@@ -13,7 +13,7 @@ interface AppState {
   activeTeam: string;
 }
 
-class Team extends React.Component<AppProps, AppState> {
+class Event extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
@@ -28,22 +28,22 @@ class Team extends React.Component<AppProps, AppState> {
       <div className="team-boxed">
         <div className="container">
           <div className="intro">
-            <h2 className="text-center">Team </h2>
+            <h2 className="text-center">Events </h2>
             <p className="text-center">
               Meet our elegant team who continously keep improving the product
               quality and ofcourse hold the fort down!
             </p>
           </div>
           <Categories
-            names={["All", "Engineering", "DevOps", "QA", "Marketing"]}
+            names={tags}
             onClick={name => this.setState({ activeTeam: name })}
             active={activeTeam}
           />
           <div className="row people">
-            {people.map((peep, index) => {
+            {events.map((event, index) => {
               return activeTeam === "All" ||
-                peep.category.indexOf(activeTeam) !== -1 ? (
-                <UserCard key={index.toString()} {...peep} />
+                event.category.indexOf(activeTeam) !== -1 ? (
+                <UserCard key={index.toString()} {...event} />
               ) : null;
             })}
           </div>
@@ -53,4 +53,4 @@ class Team extends React.Component<AppProps, AppState> {
   }
 }
 
-export default Team;
+export default Event;

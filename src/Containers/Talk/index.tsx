@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./Team.scss";
+import "./Talk.scss";
 
 //! To be removed
-import { people } from "../../constants/data";
+import { talks } from "../../constants/data";
 //! END
 import UserCard from "../../components/UserCard";
 import Categories from "../../components/Categories";
@@ -13,7 +13,7 @@ interface AppState {
   activeTeam: string;
 }
 
-class Team extends React.Component<AppProps, AppState> {
+class Talk extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
@@ -40,10 +40,10 @@ class Team extends React.Component<AppProps, AppState> {
             active={activeTeam}
           />
           <div className="row people">
-            {people.map((peep, index) => {
+            {talks.map((talk, index) => {
               return activeTeam === "All" ||
-                peep.category.indexOf(activeTeam) !== -1 ? (
-                <UserCard key={index.toString()} {...peep} />
+              talk.category.indexOf(activeTeam) !== -1 ? (
+                <UserCard key={index.toString()} {...talk} />
               ) : null;
             })}
           </div>
@@ -53,4 +53,4 @@ class Team extends React.Component<AppProps, AppState> {
   }
 }
 
-export default Team;
+export default Talk;
