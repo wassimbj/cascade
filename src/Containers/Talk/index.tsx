@@ -1,52 +1,25 @@
 import React from "react";
-
 import "./Talk.scss";
 
-//! To be removed
-import { talks } from "../../constants/data";
-//! END
-import UserCard from "../../components/UserCard";
-import Categories from "../../components/Categories";
-
 interface AppProps {}
-interface AppState {
-  activeTeam: string;
-}
+interface AppState {}
 
 class Talk extends React.Component<AppProps, AppState> {
-  constructor(props: AppProps) {
-    super(props);
-    this.state = {
-      activeTeam: "All"
-    };
-  }
-
   render() {
-    const { activeTeam } = this.state;
-
     return (
       <div className="team-boxed">
         <div className="container">
           <div className="intro">
-            <h2 className="text-center">Team </h2>
+            <h2 className="text-center">Talks </h2>
             <p className="text-center">
-              Meet our elegant team who continously keep improving the product
-              quality and ofcourse hold the fort down!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestias eligendi distinctio necessitatibus consequatur
+              blanditiis odio eius doloremque, itaque eveniet ducimus
+              accusantium reiciendis quia ex facilis voluptatem quod nobis,
+              tempore iure!
             </p>
           </div>
-          <Categories
-            names={["All", "Engineering", "DevOps", "QA", "Marketing"]}
-            onClick={name => this.setState({ activeTeam: name })}
-            active={activeTeam}
-          />
-          <div className="row people">
-            {talks.map((talk, index) => {
-              return activeTeam === "All" ||
-              talk.category.indexOf(activeTeam) !== -1 ? (
-                <UserCard key={index.toString()} {...talk} />
-              ) : null;
-            })}
-          </div>
+          {/* To be added */}
         </div>
       </div>
     );

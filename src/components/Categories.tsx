@@ -8,15 +8,11 @@ export interface CategoriesProps {
 
 const Categories: React.SFC<CategoriesProps> = props => {
   return (
-    <div
-      className="row m-4"
-      style={{ display: "flex", justifyContent: "space-between" }}
-    >
+    <div className="categories">
       {props.names.map((name, index) => {
         return (
           <button
             key={index.toString()}
-            style={{ width: "170px" }}
             className={`btn ${
               name === props.active ? "btn-primary" : "btn-ghost"
             }`}

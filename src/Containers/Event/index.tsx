@@ -1,52 +1,24 @@
 import React from "react";
-
 import "./Event.scss";
 
-//! To be removed
-import { events, tags } from "../../constants/data";
-//! END
-import UserCard from "../../components/UserCard";
-import Categories from "../../components/Categories";
-
 interface AppProps {}
-interface AppState {
-  activeTeam: string;
-}
+interface AppState {}
 
 class Event extends React.Component<AppProps, AppState> {
-  constructor(props: AppProps) {
-    super(props);
-    this.state = {
-      activeTeam: "All"
-    };
-  }
-
   render() {
-    const { activeTeam } = this.state;
-
     return (
       <div className="team-boxed">
         <div className="container">
           <div className="intro">
             <h2 className="text-center">Events </h2>
             <p className="text-center">
-              Meet our elegant team who continously keep improving the product
-              quality and ofcourse hold the fort down!
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic
+              totam non ratione culpa accusamus, eos perferendis. Eum cumque
+              laborum inventore enim est beatae sunt! Omnis veniam eligendi
+              quasi libero nobis!
             </p>
           </div>
-          <Categories
-            names={tags}
-            onClick={name => this.setState({ activeTeam: name })}
-            active={activeTeam}
-          />
-          <div className="row people">
-            {events.map((event, index) => {
-              return activeTeam === "All" ||
-                event.category.indexOf(activeTeam) !== -1 ? (
-                <UserCard key={index.toString()} {...event} />
-              ) : null;
-            })}
-          </div>
+          {/* Event section to be added */}
         </div>
       </div>
     );

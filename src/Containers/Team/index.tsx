@@ -3,7 +3,7 @@ import React from "react";
 import "./Team.scss";
 
 //! To be removed
-import { people } from "../../constants/data";
+import { people, categories } from "../../constants/data";
 //! END
 import UserCard from "../../components/UserCard";
 import Categories from "../../components/Categories";
@@ -35,14 +35,13 @@ class Team extends React.Component<AppProps, AppState> {
             </p>
           </div>
           <Categories
-            names={["All", "Engineering", "DevOps", "QA", "Marketing"]}
+            names={categories}
             onClick={name => this.setState({ activeTeam: name })}
             active={activeTeam}
           />
           <div className="row people">
             {people.map((peep, index) => {
-              return activeTeam === "All" ||
-                peep.category.indexOf(activeTeam) !== -1 ? (
+              return activeTeam === "All" || peep.Category === activeTeam ? (
                 <UserCard key={index.toString()} {...peep} />
               ) : null;
             })}

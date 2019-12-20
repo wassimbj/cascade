@@ -25,6 +25,22 @@ $background_white: #fff;
       margin-bottom: 0;
     }
   }
+  .categories {
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+    button {
+      margin: 5px;
+      outline: none;
+      border: none;
+      min-width: 100px;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
   .people {
     padding: 50px 0;
   }
@@ -35,39 +51,40 @@ $background_white: #fff;
       padding: 30px;
       background-color: $background_white;
       margin-bottom: 30px;
-    }
-    .name {
-      font-weight: bold;
-      margin-top: 28px;
-      margin-bottom: 8px;
-      color: inherit;
-    }
-    .title {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: $color_white;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-    .description {
-      font-size: 15px;
-      margin-top: 15px;
-      margin-bottom: 20px;
-    }
-    img {
-      max-width: 160px;
-    }
-  }
-  .social {
-    font-size: 18px;
-    color: $color_light_grey;
-    a {
-      color: inherit;
-      margin: 0 10px;
-      display: inline-block;
-      opacity: 0.7;
-      &:hover {
-        opacity: 1;
+      .name {
+        font-weight: bold;
+        margin-top: 28px;
+        margin-bottom: 8px;
+        color: inherit;
+      }
+      .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $color_white;
+        letter-spacing: 2px;
+        font-size: 13px;
+      }
+      .description {
+        font-size: 15px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+      img {
+        max-width: 160px;
+      }
+      .social {
+        width: 100%;
+        font-size: 18px;
+        color: $color_light_grey;
+        a {
+          color: inherit;
+          margin: 0 10px;
+          display: inline-block;
+          opacity: 0.7;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -79,5 +96,31 @@ $background_white: #fff;
       padding-top: 25px;
       font-size: 24px;
     }
+  }
+}
+
+// Common
+.tags {
+  overflow: auto;
+  padding: 5px;
+}
+.tag-link {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 3px;
+  background: #fff;
+  box-shadow: 0px 0px 10px -5px #14141480, 2px 0px 5px -4px #14141480,
+    -2px 0px 5px -4px #14141480;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 10px 5px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.location-link {
+  &:hover {
+    text-decoration: none;
+    color: #2978ac;
   }
 }
