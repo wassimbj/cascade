@@ -58,24 +58,10 @@ class EventCard extends React.Component<EventCardProps, EventCardState> {
               </div>
             ))}
           </div>
-          <p className="tags">{this._stringToTags(this.props.Tags.join())}</p>
         </div>
       </div>
     );
   }
-
-  _stringToTags = (str: string, tagType?: string) => {
-    return str.split(",").map((e, i) => {
-      const tag = e.replace(/\s/g, "").toLowerCase();
-      return (
-        <Link
-          className="tag-link"
-          key={"tag_" + i.toString()}
-          to={`?${tagType || "tag"}=${tag}`}
-        >{`#${tag}`}</Link>
-      );
-    });
-  };
 
   _eventTimer = (duration: moment.Duration) => {
     return (
