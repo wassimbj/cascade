@@ -8,7 +8,7 @@ export interface People {
   Email: string;
   Expertat: string;
   CanWorkOn: string;
-  Team: string;
+  Projects: string;
   Hobbies: string;
   PersonalBlogURL: string;
   GithubURL: string;
@@ -19,15 +19,6 @@ export interface People {
   Thumbnail: string;
 }
 
-export interface Activities {
-  name: string;
-  venue: string;
-  categories: string[];
-  presenters: string[];
-  links: { name: string; url: string }[];
-  thumbnail: string;
-}
-
 /**
  * Constants
  */
@@ -35,12 +26,12 @@ export const people: People[] = [
   {
     Name: "Abhimanyu Rathore",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "abhimanyu.rathore@loginradius.com",
     Expertat: " Java, NodeJS, React,  Angular, MySql ,Mongo",
     CanWorkOn:
       "Ionic,Linux,AWS, Azure,Docker,Nginx, PhoneGap,Cordova,PHP, other JS framework,HTML , CSS,\n\napart fromt tech  , training,architecture, planning,",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Cooking , photography, sketching, Free hand excercise // fitness",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/abhir9",
@@ -53,11 +44,11 @@ export const people: People[] = [
   {
     Name: "Aman Agrawal",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "aman.agrawal@loginradius.com",
     Expertat: "JavaScript, Angular, React",
     CanWorkOn: "UI/UX, NodeJS, MongoDB, Python,  C++, Ionic",
-    Team: "PJSF",
+    Projects: "PJSF",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/alark553",
@@ -70,11 +61,11 @@ export const people: People[] = [
   {
     Name: "Amrit Sharma",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "amrit.sharma@loginradius.com",
     Expertat: "NodeJS, MongoDB, Hyperledger Composer",
     CanWorkOn: "GoLang, ElasticSearch, Hyperledger Fabric",
-    Team: "PBDP",
+    Projects: "PBDP",
     Hobbies: "Swimming, Sketching, Cosmos Enthusiast",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/shrma-amrit",
@@ -87,11 +78,11 @@ export const people: People[] = [
   {
     Name: "Anil Gupta",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "anil.gupta@loginradius.com",
     Expertat: "",
     CanWorkOn: "ASP.NET, C#, JavaScript, MS-SQL, MongoDB",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/anilswm",
@@ -104,12 +95,12 @@ export const people: People[] = [
   {
     Name: "Chinmaya Pati",
     Location: "Hyderabad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "chinmaya.pati@loginradius.com",
     Expertat: "NodeJS, ReactJS, Redux, Angular 4+",
     CanWorkOn:
       "JS Frameworks/Libs, UI/UX, Python, Go, AWS, Docker, Nginx, Databases, Project Architecture",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Badminton, Chess, CSGO, Competitve Programming, Playstation",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/cnp96",
@@ -122,12 +113,12 @@ export const people: People[] = [
   {
     Name: "Gopal Agarwal",
     Location: "Jaipur",
-    Category: "DevOps",
+    Category: "DevOps Engineer",
     Email: "gopal.agarwal@loginradius.com",
     Expertat:
       "Kubernetes, Ansible, Linux, Docker, Azure DevOps, AWS, Azure, MEAN Stack",
     CanWorkOn: "Kubernetes, Ansible, Linux, Docker, Azure DevOps, AWS, Azure",
-    Team: "DevOps",
+    Projects: "PCA",
     Hobbies: "Badminton, Table Tennis, Travelling, Online Games",
     PersonalBlogURL: "-",
     GithubURL: "https://github.com/gopalagarwal",
@@ -140,12 +131,12 @@ export const people: People[] = [
   {
     Name: "Govind Malviya",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Director",
     Email: "govind.malviya@loginradius.com",
     Expertat: ".NET, NodeJS, MongoDB, MS SQL, JavaScript",
     CanWorkOn: "Azure, AWS, Angular 1 and 2+, ionic, phonegap, Java,",
-    Team: "PJSF, PCDA",
-    Hobbies: "Reading and Writing, Cooking,",
+    Projects: "PJSF, PCDA",
+    Hobbies: "Reading and Writing, Cooking",
     PersonalBlogURL:
       "https://govindkamalaprakashlohar.gitbooks.io/ianswerable/",
     GithubURL: "https://github.com/GovindMalviya",
@@ -158,11 +149,11 @@ export const people: People[] = [
   {
     Name: "Hemant Manwani",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "hemant.manwani@loginradius.com",
     Expertat: ".NET,C#,MS SQL, JavaScript,",
     CanWorkOn: "Angular4+,MySQL,JQuery,Java,NodeJS,Python,GO",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "Cricket, Badminton",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/hemant404",
@@ -175,11 +166,11 @@ export const people: People[] = [
   {
     Name: "Hridayesh Sharma",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "hridayesh.sharma@loginradius.com",
     Expertat: "JavaScript, Linux",
     CanWorkOn: "React, JavaScript, Typescript, Nodejs",
-    Team: "PJSF",
+    Projects: "PJSF",
     Hobbies: "Chess, Travelling, Reading",
     PersonalBlogURL: "https://dev.to/_hridaysharma",
     GithubURL: "https://github.com/vyasriday",
@@ -192,11 +183,11 @@ export const people: People[] = [
   {
     Name: "Hitesh Kumawat",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "hitesh.kumawat@loginradius.com",
     Expertat: "HTML, CSS, JQuery, Photoshop, Illustrator",
     CanWorkOn: "HTML5, SASS, LESS, STYLUS, Adobe",
-    Team: "PAC, Design",
+    Projects: "PAC",
     Hobbies: "Cricket, Chess, Cycling",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Hiteshkumawat",
@@ -209,12 +200,12 @@ export const people: People[] = [
   {
     Name: "Kheenvraj Lomror",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "kheenvraj.lomror@loginradius.com",
     Expertat:
       "Angular 2+,Angularjs, Java, HTML, JavaScript, JQuery, CSS,TypeScript,mysql, REST webservices",
     CanWorkOn: "Reactjs, Java,Python, DBs, web-services, nodejs, JS frameworks",
-    Team: "PJSF",
+    Projects: "PJSF",
     Hobbies: "Cricket, reading, traveling, bike riding",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/rajlomror",
@@ -227,11 +218,11 @@ export const people: People[] = [
   {
     Name: "Kunal Saini",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "kunal.Saini@loginradius.com",
     Expertat: "",
     CanWorkOn: "C#, Golang, JavaScript, Node, Angular, MongoDB",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/SuperKunal",
@@ -244,11 +235,11 @@ export const people: People[] = [
   {
     Name: "Mayank Agarwal",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "mayank.agarwal@loginradius.com",
     Expertat: "Javascript, JQuery, Nodejs, Mongo",
     CanWorkOn: "Golang, JS framework, Docker, Nginx, Java, AWS",
-    Team: "PCDA",
+    Projects: "PCDA",
     Hobbies: "Traveling, Listening Music",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/mayankagrwal",
@@ -261,11 +252,11 @@ export const people: People[] = [
   {
     Name: "Mohammed Modi",
     Location: "Hyderabad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "mohammed.modi@loginradius.com",
     Expertat: "Angular 2+, React JS, Node JS",
     CanWorkOn: "Python, Java, DotNet",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Indoor Games, Reading",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/mohammed786",
@@ -278,11 +269,11 @@ export const people: People[] = [
   {
     Name: "Muneer Syed",
     Location: "Hyderabad",
-    Category: "DevOps",
+    Category: "DevOps Engineer",
     Email: "muneer.syed@loginradius.com",
     Expertat: "Docker, Kubernetes, Shell scripting",
     CanWorkOn: "AWS,Kubernetes,Anisble",
-    Team: "DevOps",
+    Projects: "DevOps",
     Hobbies: "Cricket, Badminton, Listening to Podcasts",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Muneer94",
@@ -295,11 +286,11 @@ export const people: People[] = [
   {
     Name: "Narendra Pareek",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "narendra.Pareek@loginradius.com",
     Expertat: "Node JS, GoLang, JavaScript",
     CanWorkOn: "Ionic, Angular",
-    Team: "PCDA",
+    Projects: "PCDA",
     Hobbies: "Music, movies, Table Tennis, Travelling",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/pareek-narendra",
@@ -312,11 +303,11 @@ export const people: People[] = [
   {
     Name: "Nitesh Jain",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "nitesh.jain@loginradius.com",
     Expertat: "Node JS, Angular,JavaScript, Vue,MongoDB",
     CanWorkOn: "C#, JavaScript, Node, Vue, Angular, React, MongoDB",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/niteshjain1987",
@@ -329,11 +320,11 @@ export const people: People[] = [
   {
     Name: "Piyush Kumar",
     Location: "Hyderabad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "piyush.kumar@loginradius.com",
     Expertat: "",
     CanWorkOn: "Go/Python/Java/Distributed Systems/Kubernetes",
-    Team: "PBDP",
+    Projects: "PBDP",
     Hobbies: "Reading, PC Gaming",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/kpiyush17",
@@ -346,11 +337,11 @@ export const people: People[] = [
   {
     Name: "Priyadarshan Mohanty",
     Location: "Hyderabad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "priyadarshan.mohanty@loginradius.com",
     Expertat: "",
     CanWorkOn: "Python/Scala/SQL/Spark/Hadoop/Hive",
-    Team: "PBDP",
+    Projects: "PBDP",
     Hobbies: "TT, Reading Novels, Listening to Music, Watching Football",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/priyadarshan1995",
@@ -363,11 +354,11 @@ export const people: People[] = [
   {
     Name: "Puneet Singh",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "puneet.singh@loginradius.com",
     Expertat: "Node.js, MongoDB",
     CanWorkOn: "JavaScript, Golang, Redis, AWS",
-    Team: "PCDA",
+    Projects: "PCDA",
     Hobbies: "Reading Books, Swimming,",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/puneetsingh24",
@@ -380,12 +371,12 @@ export const people: People[] = [
   {
     Name: "Ravi Teja Ghanta",
     Location: "Hyderabad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "ravi.ghanta@loginradius.com",
     Expertat: "Go/Databases/Distributed Systems/Gameplay Programming",
     CanWorkOn:
       "JS/NodeJS/Angular/React/iOS/Unity/Game Design\nInterior Design/UX/Growth Strategy",
-    Team: "PBDP",
+    Projects: "PBDP",
     Hobbies: "Football, Cycling, Playstation",
     PersonalBlogURL: "https://ravitejag.github.com",
     GithubURL: "https://github.com/ravitejag",
@@ -398,11 +389,11 @@ export const people: People[] = [
   {
     Name: "Surbhi Gupta",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "surbhi.gupta@loginradius.com",
     Expertat: ".Net,C# ,Ms SQL,Mongo DB,Javascript",
     CanWorkOn: "Angular 4+,Node JS, GO",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "Writing, Cooking, badminton",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/surbhilr",
@@ -415,11 +406,11 @@ export const people: People[] = [
   {
     Name: "Versha Gupta",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "versha.gupta@loginradius.com",
     Expertat: "PHP,  Angular, React Js, Node JS, Javascript",
     CanWorkOn: "Python, Coldfusion, Java, DOTNet",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Badminton, Chess, Cooking, TT",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/VershaGupta",
@@ -432,11 +423,11 @@ export const people: People[] = [
   {
     Name: "Vijay Singh",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "vijay.singh@loginradius.com",
     Expertat: ".Net/NodeJs/MongoDB/MsSQL/Azure",
     CanWorkOn: "Angular/PhoneGap/Ionic/Nginx",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/VijayShekhawat",
@@ -449,12 +440,12 @@ export const people: People[] = [
   {
     Name: "Vishal Sharma",
     Location: "Jaipur",
-    Category: "DevOps",
+    Category: "DevOps Engineer",
     Email: "vishal.sharma@loginradius.com",
     Expertat: "",
     CanWorkOn:
       "Kubernetes, AzureDevOps, Ansible, Prometheus, Zabbix, Grafana, Jenkins, Openshift, Docker, AWS, Site24*7, RunScope, Python, JAVA, Shell Scripting, Azure",
-    Team: "DevOps",
+    Projects: "DevOps",
     Hobbies:
       "Carrom, Cricket, TT, Badminton, Kabaddi, Watching Football, Travelling",
     PersonalBlogURL: "",
@@ -468,11 +459,11 @@ export const people: People[] = [
   {
     Name: "Pawan Dixit",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "pawan.Dixit@loginradius.com",
     Expertat: "Node JS,Selenium,Automation \nTesting,Manual Testing",
     CanWorkOn: "JS/Node JS/Java",
-    Team: "Regression",
+    Projects: "Regression",
     Hobbies: "Cricket, TT, Learn new technology",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/PawanDixit23",
@@ -485,11 +476,11 @@ export const people: People[] = [
   {
     Name: "Ankit Singh",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "ankit.singh@loginradius.com",
     Expertat: "PHP",
     CanWorkOn: "Pyhton/ROR/Node JS/\nGo/JS/Coldfusion",
-    Team: "Implementation",
+    Projects: "Implementation",
     Hobbies: "Cricket, TT",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/ankiitsinghh",
@@ -502,12 +493,12 @@ export const people: People[] = [
   {
     Name: "Giriraj Yadav",
     Location: "jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "giriraj.yadav@loginradius.com",
     Expertat: "Android",
     CanWorkOn:
       "Ios/Java/C#/JS/NodeJs/\nAnguler/React Native\nPhoneGap,Cordova,Ionic,Xamarin",
-    Team: "Mobile Implementation",
+    Projects: "Mobile Implementation",
     Hobbies: "Cricket,TT",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Giriraj1200",
@@ -520,11 +511,11 @@ export const people: People[] = [
   {
     Name: "Kailash Soni",
     Location: "jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "kailash.soni@loginradius.com",
     Expertat: "PHP, Pyhton, ROR, Node JS,MySQL,MongoDB,",
     CanWorkOn: "",
-    Team: "NOCE",
+    Projects: "NOCE",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/soninow",
@@ -537,11 +528,11 @@ export const people: People[] = [
   {
     Name: "Ashish Sharma",
     Location: "jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "ashish.sharma@loginradius.com",
     Expertat: "android",
     CanWorkOn: "Java,C#,nodejs,",
-    Team: "Implementation",
+    Projects: "Implementation",
     Hobbies: "Cricket,photography,traveling",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/ashish8947",
@@ -554,11 +545,11 @@ export const people: People[] = [
   {
     Name: "Surendranatha Reddy",
     Location: "Hyderabad",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "surendranath.reddy@loginradius.com",
     Expertat: "Java, Java Script, Selenium, Manual and Automation Testing, SQL",
     CanWorkOn: "HTML, CSS, DB Testing, Jmeter, Jenkins, ES Queries",
-    Team: "QA, PBDP",
+    Projects: "PBDP",
     Hobbies: "Sleeping, Sports, Games",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/reddysuren",
@@ -571,11 +562,11 @@ export const people: People[] = [
   {
     Name: "Abhishek Saini",
     Location: "Jaipur",
-    Category: "Support",
+    Category: "Support Engineer",
     Email: "abhishek.saini@loginradius.com",
     Expertat: "",
     CanWorkOn: "NodeJs, Javascript,Python",
-    Team: "Support",
+    Projects: "Support",
     Hobbies: "Football, Cricket, Tennis",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/abhi-9",
@@ -588,28 +579,28 @@ export const people: People[] = [
   {
     Name: "Neha Vyas",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "neha.vyas@loginradius.com",
     Expertat: "Automation Testing,Manual Testing",
     CanWorkOn: "Automation Testing,Manual Testing",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Travelling,Shopping,music",
     PersonalBlogURL: "",
-    GithubURL: "https://github.com/nehavyasqa",
+    GithubURL: "https://github.com/nehavyasQA Engineer",
     GithubAvatar: "NO",
     StackOverFlow: "",
     Medium: "",
     PersonalWebsite: "",
-    Thumbnail: "https://github.com/nehavyasqa.png?size=460"
+    Thumbnail: "https://github.com/nehavyasQA Engineer.png?size=460"
   },
   {
     Name: "Akshaya Sharma",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "akshaya.sharma@loginradius.com",
     Expertat: "NodeJs, JavaScript, PHP, Angular2+, MySQL, MongoDB",
     CanWorkOn: "React",
-    Team: "Implementation",
+    Projects: "Implementation",
     Hobbies: "Reading,Badminton",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/akshay-s-770",
@@ -622,11 +613,11 @@ export const people: People[] = [
   {
     Name: "Apeksha Gupta",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "apeksha.gupta@loginradius.com",
     Expertat: "PHP, Javascript,NodeJs",
     CanWorkOn: ".NET, MongoDB",
-    Team: "Implementation",
+    Projects: "Implementation",
     Hobbies: "Craft,Movies",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/ApekshaAgarwal",
@@ -639,11 +630,11 @@ export const people: People[] = [
   {
     Name: "Gaurav Bewal",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "gaurav.bewal@loginradius.com",
     Expertat: "Java, HTML, CSS",
     CanWorkOn: "Andriod, javascript",
-    Team: "PJSF",
+    Projects: "PJSF",
     Hobbies: "Cricket, Cooking and Singing",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/GauravBewal",
@@ -656,12 +647,12 @@ export const people: People[] = [
   {
     Name: "Harjinder Singh Banga",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "harjinder.banga@loginradius.com",
     Expertat:
       "Node JS,Selenium,Automation \nTesting,Manual Testing, Java, HTML, CSS, Java Script",
     CanWorkOn: "Node Js and Java",
-    Team: "Verbinders, Integrators",
+    Projects: "Verbinders, Integrators",
     Hobbies: "Read Self help books, Learn new technology",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/hsbanga",
@@ -674,12 +665,12 @@ export const people: People[] = [
   {
     Name: "Rakesh Pareek",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "rakesh.pareek@loginradius.com",
     Expertat: "",
     CanWorkOn:
       "Selenium, webdriverio, mocha, Php, JavaScript, Nodejs, html, css",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/rkpareek",
@@ -692,12 +683,12 @@ export const people: People[] = [
   {
     Name: "Chhavi Gupta",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "chhavi.gupta@loginradius.com",
     Expertat:
       "Java,Selenium IDE, Selenium Webdriver, MySQL, Automation Testing, Manual Testing",
     CanWorkOn: "JavaScript, Android, Python",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "Badminton, reading books",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Chhavig28",
@@ -710,11 +701,11 @@ export const people: People[] = [
   {
     Name: "Indrasen",
     Location: "Jaipur",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "indrasen.kumar@loginradius.com",
     Expertat: "Node Js,Javascript,Php framework,Mongodb,Dialog Flow",
     CanWorkOn: "JavaScript, Android, Node Js,Java,Aws",
-    Team: "Implementation",
+    Projects: "Implementation",
     Hobbies: "Badminton,Swimming,sketching,traveling",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/indrasen715/",
@@ -727,11 +718,11 @@ export const people: People[] = [
   {
     Name: "Manoj Singh",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "manoj.singh@loginradius.com",
     Expertat: "Manual Testing,Automation Testing,Nodejs",
     CanWorkOn: "Java,Api automation",
-    Team: "PAC",
+    Projects: "PAC",
     Hobbies: "Cricket,Football",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/manojlr89",
@@ -744,13 +735,13 @@ export const people: People[] = [
   {
     Name: "Kuldeep Chhipa",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "kuldeep.chhipa@loginradius.com",
     Expertat:
       "Nightwatch, Mocha, Java-Selenium, JS, CSS, Manual Testing, Automation",
     CanWorkOn:
       "Nightwatch, mocha framewrok, Php, JavaScript, Nodejs, html, css, Selenium with JAVA",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "Cricket, Badminton, reading books",
     PersonalBlogURL: "http://hackeronway.blogspot.com/",
     GithubURL: "https://github.com/Kuldeep-Chhipa",
@@ -767,7 +758,7 @@ export const people: People[] = [
     Email: "ritika.kapahi@loginradius.com",
     Expertat: "Customer relationship management",
     CanWorkOn: "Customer,People management documentation",
-    Team: "CS",
+    Projects: "Customer Success",
     Hobbies: "Shopping, Travelling, Music",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Ritika3189",
@@ -780,11 +771,11 @@ export const people: People[] = [
   {
     Name: "Akriti Srivastava",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "akriti.srivastava@loginradius.com",
     Expertat: "Manual Testing, Automation Testing",
     CanWorkOn: "Monitoring ,Tracking , Nodejs, HTml, CSS, api",
-    Team: "QA, PAC",
+    Projects: "QA Engineer, PAC",
     Hobbies: "Dancing, Cooking , Listening songs",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -797,11 +788,11 @@ export const people: People[] = [
   {
     Name: "Himanshu Kalra",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "himanshu.kalra@loginradius.com",
     Expertat: "Manual testing,Automation testing",
     CanWorkOn: "JavaScript, Html, Data processing,",
-    Team: "Regression",
+    Projects: "Regression",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Hkalra256",
@@ -820,7 +811,7 @@ export const people: People[] = [
       "Python, HTML, CSS, Basic JS, Application Support, Customer service, Troubleshooting, Client interaction, Troubleshooting",
     CanWorkOn:
       "Python, Django, Flask, Javascript, HTML, CSS, MySQL, Postgre SQL, Mongodb, Teradata, Arduino C, Selenium, Manual Testing and Browser Automation by Python",
-    Team: "Aiders",
+    Projects: "Aiders",
     Hobbies: "Basketball, Cricket, Badminton, Swimming, Listening Songs",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/anonymous14294",
@@ -839,7 +830,7 @@ export const people: People[] = [
       "Solving Customer queries, Troubleshooting, Client interaction, Documentation",
     CanWorkOn:
       "Client interaction, API, JavaScript, HTML, creating MD file, salesforce, Zendesk.",
-    Team: "Aiders",
+    Projects: "Aiders",
     Hobbies: "Cricket, TT, Watching movies, Exercising.",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Anky-44",
@@ -858,7 +849,7 @@ export const people: People[] = [
       "Application Support, Customer service, Troubleshooting, Client interaction",
     CanWorkOn:
       "JavaScript, Html, CSS, Cllient handling, customer service, debugging",
-    Team: "Aiders",
+    Projects: "Aiders",
     Hobbies: "Cricket, volleyball, travel, Movies, TT",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/rajeevsharma34",
@@ -876,7 +867,7 @@ export const people: People[] = [
     Expertat:
       "Troubleshooting, customer service, Documentation, Drafting mails, MD files",
     CanWorkOn: "API, JavaScript",
-    Team: "Aiders",
+    Projects: "Aiders",
     Hobbies: "Sketching, Cooking, Reading",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -893,7 +884,7 @@ export const people: People[] = [
     Email: "shivangini.yadav@loginradius.com",
     Expertat: "SEO, SMO, SMM, PPC, SEM",
     CanWorkOn: "Content, Influencer marketing",
-    Team: "Marketing",
+    Projects: "Marketing",
     Hobbies: "Travelling, Music",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -906,12 +897,12 @@ export const people: People[] = [
   {
     Name: "Arpita Garg",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "arpita.garg@loginradius.com",
     Expertat:
       "Functional Testing, Automation Testing using UFT, Defect Management tool - ALM, SAP Confuguration and Functional Testing for SD and MM Module.",
     CanWorkOn: "Html, CSS, Javascript, API Testing",
-    Team: "QA",
+    Projects: "QA Engineer",
     Hobbies: "Painting, Sketching, Cooking and Travelling",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/Arpita1311-cts",
@@ -924,11 +915,11 @@ export const people: People[] = [
   {
     Name: "Aditya Soni",
     Location: "Jaipur",
-    Category: "QA",
+    Category: "QA Engineer",
     Email: "aditya.soni@loginradius.com",
     Expertat: "Manual testing, Exploratory testing, Non functional testing",
     CanWorkOn: "HTML, CSS, Javascript, SDK, API and Integration Testing",
-    Team: "QA",
+    Projects: "QA Engineer",
     Hobbies: "Travelling, Cricket and Listen Rap Songs",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -941,12 +932,12 @@ export const people: People[] = [
   {
     Name: "B L V Ramprasad",
     Location: "Hyderbad",
-    Category: "Developer",
+    Category: "Software Engineer",
     Email: "blv.ramprasad@loginradius.com",
     Expertat:
       ".Net,Angular,C#, SQL Server, MSBI,Jquery,Javascript,Autodesk inventor Plugins,Web Api,WCF,Qbos,Stripe integration,Authorize net Integration, Avalara tax integration.",
     CanWorkOn: "React,RPC,GoLang,Devops,Hybrid mobile apps",
-    Team: "PCA",
+    Projects: "PCA",
     Hobbies: "Cricket, TT, Volleyball, Badminton",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -964,7 +955,7 @@ export const people: People[] = [
     Expertat:
       "Html,Big data hadoop,C,javascript,troubleshooting,Client handling",
     CanWorkOn: "",
-    Team: "Aiders",
+    Projects: "Aiders",
     Hobbies: "",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -977,12 +968,12 @@ export const people: People[] = [
   {
     Name: "Saikiran Babladi",
     Location: "Hyderabad",
-    Category: "Solution Engineering",
+    Category: "Solution Engineer",
     Email: "saikiran.babladi@loginradius.com",
     Expertat:
       "Solutions Engineering, RFx Management, Client Product Demonstrations",
     CanWorkOn: "HTML, CSS",
-    Team: "Solution Engineering",
+    Projects: "Solution Engineering",
     Hobbies: "Basketball, Console Gaming, Cooking",
     PersonalBlogURL: "",
     GithubURL: "",
@@ -994,7 +985,32 @@ export const people: People[] = [
   }
 ];
 
-export const events: Activities[] = [
+export const events = [
+  {
+    name: "LoginRadius IO Launch",
+    venue: "91Springboard, Kondapur, Hyderabad",
+    tags: ["Engineering", "cIAM"],
+    datetime: "12/24/2019T12:30:00Z",
+    presenters: [
+      "ravi.ghanta@loginradius.com",
+      "saikiran.babladi@loginradius.com"
+    ],
+    registerURL: "https://loginradius.com/events/register?id=123",
+    links: [
+      {
+        name: "PPT",
+        url: "https://twitter.com/__grt__"
+      },
+      {
+        name: "Photos",
+        url: "https://github.com/ravitejag"
+      }
+    ],
+    thumbnail: "https://github.com/ravitejag.png?size=460"
+  }
+];
+
+export const talks = [
   {
     name: "Demo Day",
     venue: "91Springboard",
@@ -1017,30 +1033,7 @@ export const events: Activities[] = [
   }
 ];
 
-export const talks: Activities[] = [
-  {
-    name: "Demo Day",
-    venue: "91Springboard",
-    categories: ["Engineering"],
-    presenters: [
-      "ravi.ghanta@loginradius.com",
-      "saikiran.babladi@loginradius.com"
-    ],
-    links: [
-      {
-        name: "PPT",
-        url: "https://twitter.com/__grt__"
-      },
-      {
-        name: "Photos",
-        url: "https://github.com/ravitejag"
-      }
-    ],
-    thumbnail: "https://github.com/ravitejag.png?size=460"
-  }
-];
-
-export const hackathons: Activities[] = [
+export const hackathons = [
   {
     name: "Demo Day",
     venue: "91Springboard",
@@ -1084,11 +1077,12 @@ export const opensourcerepos = [
 
 export const categories = [
   "All",
-  "Developer",
-  "DevOps",
-  "QA",
-  "Support",
+  "Software Engineer",
+  "DevOps Engineer",
+  "Director",
+  "QA Engineer",
+  "Support Engineer",
   "Customer Success",
   "Marketing",
-  "Solution Engineering"
+  "Solution Engineer"
 ];

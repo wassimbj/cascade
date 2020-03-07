@@ -1,14 +1,14 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
+// Containers
+import Event from "../Event";
+import Hackathon from "../Hackathon";
+import Navigation from "../Navigation";
+import OpenSource from "../OpenSource";
+import People from "../People";
+import Talk from "../Talk";
 // Style
 import "./App.scss";
-// Containers
-import Team from "../Team";
-import Event from "../Event";
-import Talk from "../Talk";
-import Hackathon from "../Hackathon";
-import OpenSource from "../OpenSource";
-import Navigation from "../Navigation";
 
 interface AppProps {}
 interface AppState {}
@@ -20,7 +20,7 @@ class App extends React.Component<AppProps, AppState> {
         <Navigation
           title="LoginRadius Engineering"
           sections={[
-            { name: "Team", link: "/team" },
+            { name: "People", link: "/people" },
             { name: "Event", link: "/event" },
             { name: "Talk", link: "/talk" },
             { name: "Hackathon", link: "/hackathon" },
@@ -28,12 +28,12 @@ class App extends React.Component<AppProps, AppState> {
           ]}
         />
         <Switch>
-          <Route exact path="/team" component={Team} />
+          <Route exact path="/people" component={People} />
           <Route exact path="/event" component={Event} />
           <Route exact path="/talk" component={Talk} />
           <Route exact path="/hackathon" component={Hackathon} />
           <Route exact path="/opensource" component={OpenSource} />
-          <Redirect to="/team" />
+          <Redirect to="/people" />
         </Switch>
       </React.Fragment>
     );
