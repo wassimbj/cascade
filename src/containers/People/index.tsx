@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteComponentProps, withRouter } from "react-router-dom";
-// import Categories from "../../components/Categories";
+import Categories from "../../components/Categories";
 import UserCard from "../../components/UserCard";
 import { categories, people } from "../../constants/data";
 import { parseQueryParams } from "../../utils";
@@ -57,11 +57,11 @@ class People extends React.Component<PeopleProps, PeopleState> {
               This is our team, who help you bring a delighful user experience!
             </p>
           </div>
-          {/* <Categories
+          <Categories
             names={categories}
             onClick={name => this.setState({ activeTeam: name })}
             active={activeTeam}
-          /> */}
+          />
           <div className="row people">
             {people.map((peep, index) => {
               return activeTag !== undefined ? (

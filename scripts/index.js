@@ -2,7 +2,29 @@ const csv = require("csvtojson")
 const fs = require("fs");
 
 const csvFilePath = "scripts/Developers Master Sheet - Master Sheet.csv"
-const jsonFilePath = "scripts/Developers Master Sheet - Master Sheet.json"
+
+const outDir = "./scripts/out";
+// const jsonFilePath = `${outDir}/Developers Master Sheet - Master Sheet.json`
+const outFilePath = `${outDir}/data.tsx`;
+
+try {
+  if (!fs.statSync(csvFilePath).isFile()) {
+    console.error("Input file path is invalid.");
+    process.exit(1);
+  }
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
+
+try {
+  if (!fs.statSync(outDir).isDirectory()) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+} catch (err) {
+  fs.mkdirSync(outDir, { recursive: true });
+}
+
 csv().fromFile(csvFilePath).then(people => {
   const formatted = [];
   const categories = new Set(["All"]);
@@ -24,22 +46,19 @@ csv().fromFile(csvFilePath).then(people => {
     formatted.push(row)
   }
 
-  // /**
-  //  * Generate file content
-  //  */
-  // const peopleKeys = Object.keys(formatted[0])
-  // let data = "";
+  /**
+   * Generate file content
+   */
+  let fileContent = `export const categories: string[] = [
+  ${Array.from(categories).map(cat => `"${cat}"`).join(",\n\t")}
+];\n\n`;
 
-  // // Interfaces; 
-  // data = `/**
-  // * Interfaces
-  // */\n`;
-  // data += "export interface People {\n";
-  // for (let key of peopleKeys) {
-  //   data += `  ${key}: string;\n`;
-  // }
-  // data += "}\n";
-  // console.log(data)
+  fileContent += `export interface People {
+  ${Object.keys(formatted[0]).map(key => `${key}: string`).join(",\n\t")}
+};\n\n`;
 
-  fs.writeFileSync(jsonFilePath, JSON.stringify({ categories: Array.from(categories), people: formatted }, null, 4))
+  fileContent += `export const people: People[] = ${JSON.stringify(formatted, null, 2)};`
+
+  fs.writeFileSync(outFilePath, fileContent);
+  // fs.writeFileSync(jsonFilePath, JSON.stringify({ categories: Array.from(categories), people: formatted }, null, 4))
 })
