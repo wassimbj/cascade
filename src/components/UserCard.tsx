@@ -17,7 +17,7 @@ const UserCard: React.FC<People> = props => {
         />
         <h3 className="name">{props.Name}</h3>
         <div className="title">{props.Category}</div>
-        <div className="social">
+        <div className="social mt-4">
           {social.map((soc, index) => {
             return (
               <a

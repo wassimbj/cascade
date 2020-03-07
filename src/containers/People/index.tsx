@@ -3,8 +3,8 @@ import { RouteComponentProps, withRouter } from "react-router-dom";
 import Categories from "../../components/Categories";
 import UserCard from "../../components/UserCard";
 import { categories, people } from "../../constants/data";
-import { parseQueryParams } from "../../utils";
 import "./Team.scss";
+import qs from "qs";
 
 interface PeopleProps extends RouteComponentProps {}
 interface PeopleState {
@@ -15,38 +15,19 @@ interface PeopleState {
 class People extends React.Component<PeopleProps, PeopleState> {
   constructor(props: PeopleProps) {
     super(props);
+    const query = qs.parse(props.location.search, { ignoreQueryPrefix: true });
+
     this.state = {
-      activeTeam: "All"
+      activeTeam: ["All", ...categories].includes(query.cat) ? query.cat : "All"
     };
-  }
 
-  // Vars
-  private _unregisterHistoryListener: any;
-
-  // Life-cycle
-  componentDidMount() {
-    this._onUrlChange(window.location);
-
-    this._unregisterHistoryListener = this.props.history.listen(
-      this._onUrlChange
-    );
-  }
-  componentWillUnmount() {
-    if (this._unregisterHistoryListener) {
-      this._unregisterHistoryListener();
+    if (query.cat === undefined) {
+      props.history.push("?cat=All");
     }
   }
-
-  // Event Listeners
-  _onUrlChange = (location: any) => {
-    const query = parseQueryParams(location.search);
-    if (query.has("expert")) {
-      this.setState({ activeTag: query.get("expert") });
-    }
-  };
 
   render() {
-    const { activeTeam, activeTag } = this.state;
+    const { activeTeam } = this.state;
 
     return (
       <div className="team-boxed">
@@ -59,18 +40,15 @@ class People extends React.Component<PeopleProps, PeopleState> {
           </div>
           <Categories
             names={categories}
-            onClick={name => this.setState({ activeTeam: name })}
+            onClick={name => {
+              this.setState({ activeTeam: name });
+              this.props.history.push(`?cat=${name}`);
+            }}
             active={activeTeam}
           />
           <div className="row people">
             {people.map((peep, index) => {
-              return activeTag !== undefined ? (
-                peep.Expertat.replace(/\s/g, "")
-                  .toLowerCase()
-                  .indexOf(activeTag) !== -1 ? (
-                  <UserCard key={index.toString()} {...peep} />
-                ) : null
-              ) : activeTeam === "All" || peep.Category === activeTeam ? (
+              return activeTeam === "All" || peep.Category === activeTeam ? (
                 <UserCard key={index.toString()} {...peep} />
               ) : null;
             })}
