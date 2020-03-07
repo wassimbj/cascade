@@ -1,5 +1,7 @@
 import React from "react";
 import "./Event.scss";
+import { events } from "../../constants/data";
+import EventCard from "../../components/EventCard";
 
 interface AppProps {}
 interface AppState {}
@@ -12,13 +14,15 @@ class Event extends React.Component<AppProps, AppState> {
           <div className="intro">
             <h2 className="text-center">Events </h2>
             <p className="text-center">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic
-              totam non ratione culpa accusamus, eos perferendis. Eum cumque
-              laborum inventore enim est beatae sunt! Omnis veniam eligendi
-              quasi libero nobis!
+              The list of amazing events which are going to happend in
+              loginradius. You will find the list below.
             </p>
           </div>
-          {/* Event section to be added */}
+          <div className="row people">
+            {events.map((eve, index) => (
+              <EventCard {...eve} />
+            ))}
+          </div>
         </div>
       </div>
     );
