@@ -1,24 +1,3 @@
-/**
- * Interfaces
- */
-export interface People {
-  Name: string;
-  Location: string;
-  Category: string;
-  Email: string;
-  Expertat: string;
-  CanWorkOn: string;
-  Projects: string;
-  Hobbies: string;
-  PersonalBlogURL: string;
-  GithubURL: string;
-  GithubAvatar: string;
-  StackOverFlow: string;
-  Medium: string;
-  PersonalWebsite: string;
-  Thumbnail: string;
-}
-
 export interface Event {
   Name: string;
   Venue: string;
@@ -38,16 +17,138 @@ export interface Activities {
   thumbnail: string;
 }
 
-/**
- * Constants
- */
-export const people: People[] = [
+export const events: Event[] = [
+  {
+    Name: "LoginRadius IO Launch",
+    Venue: "91Springboard, Kondapur, Hyderabad",
+    Tags: ["Engineering", "cIAM"],
+    Datetime: "2020-04-01T12:30:00Z",
+    Presenters: [
+      {
+        Name: "ravi.ghanta@loginradius.com",
+        Thumbnail: "https://github.com/ravitejag.png?size=460"
+      },
+      {
+        Name: "saikiran.babladi@loginradius.com"
+      }
+    ],
+    RegisterURL: "https://loginradius.com/events/register?id=123",
+    Links: [
+      {
+        name: "PPT",
+        url: "https://twitter.com/__grt__"
+      },
+      {
+        name: "Photos",
+        url: "https://github.com/ravitejag"
+      }
+    ]
+  }
+];
+
+export const talks = [
+  {
+    name: "Demo Day",
+    venue: "91Springboard",
+    categories: ["Engineering"],
+    presenters: [
+      "ravi.ghanta@loginradius.com",
+      "saikiran.babladi@loginradius.com"
+    ],
+    links: [
+      {
+        name: "PPT",
+        url: "https://twitter.com/__grt__"
+      },
+      {
+        name: "Photos",
+        url: "https://github.com/ravitejag"
+      }
+    ],
+    thumbnail: "https://github.com/ravitejag.png?size=460"
+  }
+];
+
+export const hackathons = [
+  {
+    name: "Demo Day",
+    venue: "91Springboard",
+    categories: ["All"],
+    presenters: [
+      "ravi.ghanta@loginradius.com",
+      "saikiran.babladi@loginradius.com"
+    ],
+    links: [
+      {
+        name: "PPT",
+        url: "https://twitter.com/__grt__"
+      },
+      {
+        name: "Photos",
+        url: "https://github.com/ravitejag"
+      }
+    ],
+    thumbnail: "https://github.com/ravitejag.png?size=460"
+  }
+];
+
+export const opensourcerepos = [
+  {
+    name: "JS SDK",
+    description: "lorem ipsum",
+    tags: ["All"],
+    links: [
+      {
+        name: "Github",
+        url: "https://github.com/ravitejag"
+      },
+      {
+        name: "Live",
+        url: "https://github.com/ravitejag"
+      }
+    ],
+    thumbnail: "https://github.com/ravitejag.png?size=460"
+  }
+];
+
+// People
+export const categories: string[] = [
+  "All",
+  "Software Engineer",
+  "DevOps Engineer",
+  "Director",
+  "QA Engineer",
+  "Support Engineer",
+  "Customer Success",
+  "Marketing",
+  "Solution Engineer"
+];
+
+export interface PeopleSchema {
+  Name: string;
+  Location: string;
+  Category: string;
+  Email: string;
+  Expertat: string;
+  CanWorkOn: string;
+  Projects: string;
+  Hobbies: string;
+  PersonalBlogURL: string;
+  GithubURL: string;
+  GithubAvatar: string;
+  StackOverFlow: string;
+  Medium: string;
+  PersonalWebsite: string;
+  Thumbnail: string;
+}
+
+export const people: PeopleSchema[] = [
   {
     Name: "Abhimanyu Rathore",
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "abhimanyu.rathore@loginradius.com",
-    Expertat: " Java, NodeJS, React,  Angular, MySql ,Mongo",
+    Expertat: "Java, NodeJS, React, Angular, MySQL, MongoDB",
     CanWorkOn:
       "Ionic,Linux,AWS, Azure,Docker,Nginx, PhoneGap,Cordova,PHP, other JS framework,HTML , CSS,\n\napart fromt tech  , training,architecture, planning,",
     Projects: "PAC",
@@ -99,7 +200,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "anil.gupta@loginradius.com",
-    Expertat: "",
+    Expertat: "C#",
     CanWorkOn: "ASP.NET, C#, JavaScript, MS-SQL, MongoDB",
     Projects: "PCA",
     Hobbies: "",
@@ -116,11 +217,13 @@ export const people: People[] = [
     Location: "Hyderabad",
     Category: "Software Engineer",
     Email: "chinmaya.pati@loginradius.com",
-    Expertat: "NodeJS, ReactJS, Redux, Angular 4+",
+    Expertat:
+      "NodeJS, React/Angular /w Redux, Mobile App Development, Databases, Project Architecture",
     CanWorkOn:
-      "JS Frameworks/Libs, UI/UX, Python, Go, AWS, Docker, Nginx, Databases, Project Architecture",
+      "JS Frameworks & Libs, UI/UX, PHP, Python, Go, AWS, Docker, Nginx",
     Projects: "PAC",
-    Hobbies: "Badminton, Chess, CSGO, Competitve Programming, Playstation",
+    Hobbies:
+      "Badminton, Chess, Competitve Programming, Playstation & PC Gaming",
     PersonalBlogURL: "",
     GithubURL: "https://github.com/cnp96",
     GithubAvatar: "YES",
@@ -239,7 +342,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "kunal.Saini@loginradius.com",
-    Expertat: "",
+    Expertat: "C#, Go",
     CanWorkOn: "C#, Golang, JavaScript, Node, Angular, MongoDB",
     Projects: "PCA",
     Hobbies: "",
@@ -341,7 +444,7 @@ export const people: People[] = [
     Location: "Hyderabad",
     Category: "Software Engineer",
     Email: "piyush.kumar@loginradius.com",
-    Expertat: "",
+    Expertat: "Go",
     CanWorkOn: "Go/Python/Java/Distributed Systems/Kubernetes",
     Projects: "PBDP",
     Hobbies: "Reading, PC Gaming",
@@ -358,7 +461,7 @@ export const people: People[] = [
     Location: "Hyderabad",
     Category: "Software Engineer",
     Email: "priyadarshan.mohanty@loginradius.com",
-    Expertat: "",
+    Expertat: "Go",
     CanWorkOn: "Python/Scala/SQL/Spark/Hadoop/Hive",
     Projects: "PBDP",
     Hobbies: "TT, Reading Novels, Listening to Music, Watching Football",
@@ -375,7 +478,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "puneet.singh@loginradius.com",
-    Expertat: "Node.js, MongoDB",
+    Expertat: "NodeJS, MongoDB",
     CanWorkOn: "JavaScript, Golang, Redis, AWS",
     Projects: "PCDA",
     Hobbies: "Reading Books, Swimming,",
@@ -392,7 +495,7 @@ export const people: People[] = [
     Location: "Hyderabad",
     Category: "Software Engineer",
     Email: "ravi.ghanta@loginradius.com",
-    Expertat: "Go/Databases/Distributed Systems/Gameplay Programming",
+    Expertat: "Go, Databases, Distributed Systems, Gameplay Programming",
     CanWorkOn:
       "JS/NodeJS/Angular/React/iOS/Unity/Game Design\nInterior Design/UX/Growth Strategy",
     Projects: "PBDP",
@@ -461,7 +564,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "DevOps Engineer",
     Email: "vishal.sharma@loginradius.com",
-    Expertat: "",
+    Expertat: "Docker, Kubernetes",
     CanWorkOn:
       "Kubernetes, AzureDevOps, Ansible, Prometheus, Zabbix, Grafana, Jenkins, Openshift, Docker, AWS, Site24*7, RunScope, Python, JAVA, Shell Scripting, Azure",
     Projects: "DevOps",
@@ -480,7 +583,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "pawan.Dixit@loginradius.com",
-    Expertat: "Node JS,Selenium,Automation \nTesting,Manual Testing",
+    Expertat: "NodeJS, Selenium, Automation Testing, Manual Testing",
     CanWorkOn: "JS/Node JS/Java",
     Projects: "Regression",
     Hobbies: "Cricket, TT, Learn new technology",
@@ -532,7 +635,7 @@ export const people: People[] = [
     Location: "jaipur",
     Category: "Software Engineer",
     Email: "kailash.soni@loginradius.com",
-    Expertat: "PHP, Pyhton, ROR, Node JS,MySQL,MongoDB,",
+    Expertat: "PHP, Python, ROR, NodeJS, MySQL, MongoDB",
     CanWorkOn: "",
     Projects: "NOCE",
     Hobbies: "",
@@ -549,7 +652,7 @@ export const people: People[] = [
     Location: "jaipur",
     Category: "Software Engineer",
     Email: "ashish.sharma@loginradius.com",
-    Expertat: "android",
+    Expertat: "Android",
     CanWorkOn: "Java,C#,nodejs,",
     Projects: "Implementation",
     Hobbies: "Cricket,photography,traveling",
@@ -566,7 +669,7 @@ export const people: People[] = [
     Location: "Hyderabad",
     Category: "QA Engineer",
     Email: "surendranath.reddy@loginradius.com",
-    Expertat: "Java, Java Script, Selenium, Manual and Automation Testing, SQL",
+    Expertat: "Java, JavaScript, Selenium, Manual and Automation Testing, SQL",
     CanWorkOn: "HTML, CSS, DB Testing, Jmeter, Jenkins, ES Queries",
     Projects: "PBDP",
     Hobbies: "Sleeping, Sports, Games",
@@ -600,7 +703,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "neha.vyas@loginradius.com",
-    Expertat: "Automation Testing,Manual Testing",
+    Expertat: "Automation Testing, Manual Testing",
     CanWorkOn: "Automation Testing,Manual Testing",
     Projects: "PAC",
     Hobbies: "Travelling,Shopping,music",
@@ -617,7 +720,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "akshaya.sharma@loginradius.com",
-    Expertat: "NodeJs, JavaScript, PHP, Angular2+, MySQL, MongoDB",
+    Expertat: "NodeJS, JavaScript, PHP, Angular2+, MySQL, MongoDB",
     CanWorkOn: "React",
     Projects: "Implementation",
     Hobbies: "Reading,Badminton",
@@ -634,7 +737,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "apeksha.gupta@loginradius.com",
-    Expertat: "PHP, Javascript,NodeJs",
+    Expertat: "PHP, JavaScript, NodeJS",
     CanWorkOn: ".NET, MongoDB",
     Projects: "Implementation",
     Hobbies: "Craft,Movies",
@@ -669,7 +772,7 @@ export const people: People[] = [
     Category: "QA Engineer",
     Email: "harjinder.banga@loginradius.com",
     Expertat:
-      "Node JS,Selenium,Automation \nTesting,Manual Testing, Java, HTML, CSS, Java Script",
+      "NodeJS, Selenium, Automation Testing, Manual Testing, Java, HTML, CSS, JavaScript",
     CanWorkOn: "Node Js and Java",
     Projects: "Verbinders, Integrators",
     Hobbies: "Read Self help books, Learn new technology",
@@ -686,7 +789,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "rakesh.pareek@loginradius.com",
-    Expertat: "",
+    Expertat: "Automation Testing, Manual Testing",
     CanWorkOn:
       "Selenium, webdriverio, mocha, Php, JavaScript, Nodejs, html, css",
     Projects: "PCA",
@@ -704,8 +807,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "chhavi.gupta@loginradius.com",
-    Expertat:
-      "Java,Selenium IDE, Selenium Webdriver, MySQL, Automation Testing, Manual Testing",
+    Expertat: "Java, Selenium, MySQL, Automation Testing, Manual Testing",
     CanWorkOn: "JavaScript, Android, Python",
     Projects: "PCA",
     Hobbies: "Badminton, reading books",
@@ -718,11 +820,11 @@ export const people: People[] = [
     Thumbnail: "https://github.com/Chhavig28.png?size=460"
   },
   {
-    Name: "Indrasen",
+    Name: "Indrasen Kumar",
     Location: "Jaipur",
     Category: "Software Engineer",
     Email: "indrasen.kumar@loginradius.com",
-    Expertat: "Node Js,Javascript,Php framework,Mongodb,Dialog Flow",
+    Expertat: "NodeJS, JavaScript, PHP Frameworks, MongoDB, Dialog Flow",
     CanWorkOn: "JavaScript, Android, Node Js,Java,Aws",
     Projects: "Implementation",
     Hobbies: "Badminton,Swimming,sketching,traveling",
@@ -739,7 +841,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "manoj.singh@loginradius.com",
-    Expertat: "Manual Testing,Automation Testing,Nodejs",
+    Expertat: "Manual Testing, Automation Testing, NodeJS",
     CanWorkOn: "Java,Api automation",
     Projects: "PAC",
     Hobbies: "Cricket,Football",
@@ -809,7 +911,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "QA Engineer",
     Email: "himanshu.kalra@loginradius.com",
-    Expertat: "Manual testing,Automation testing",
+    Expertat: "Manual testing, Automation testing",
     CanWorkOn: "JavaScript, Html, Data processing,",
     Projects: "Regression",
     Hobbies: "",
@@ -884,7 +986,7 @@ export const people: People[] = [
     Category: "Customer Success",
     Email: "engswatisoni1993@gmail.com",
     Expertat:
-      "Troubleshooting, customer service, Documentation, Drafting mails, MD files",
+      "Troubleshooting, Customer Service, Documentation, Drafting mails",
     CanWorkOn: "API, JavaScript",
     Projects: "Aiders",
     Hobbies: "Sketching, Cooking, Reading",
@@ -954,7 +1056,7 @@ export const people: People[] = [
     Category: "Software Engineer",
     Email: "blv.ramprasad@loginradius.com",
     Expertat:
-      ".Net,Angular,C#, SQL Server, MSBI,Jquery,Javascript,Autodesk inventor Plugins,Web Api,WCF,Qbos,Stripe integration,Authorize net Integration, Avalara tax integration.",
+      ".Net, Angular, C#, SQL Server, MSBI, JQuery, Javascript, Autodesk Inventor Plugins, Web API, WCF, Qbos",
     CanWorkOn: "React,RPC,GoLang,Devops,Hybrid mobile apps",
     Projects: "PCA",
     Hobbies: "Cricket, TT, Volleyball, Badminton",
@@ -971,8 +1073,7 @@ export const people: People[] = [
     Location: "Jaipur",
     Category: "Customer Success",
     Email: "megha.lal@loginradius.com",
-    Expertat:
-      "Html,Big data hadoop,C,javascript,troubleshooting,Client handling",
+    Expertat: "HTML, Big data, C, JavaScript, Troubleshooting, Client Handling",
     CanWorkOn: "",
     Projects: "Aiders",
     Hobbies: "",
@@ -1002,110 +1103,4 @@ export const people: People[] = [
     PersonalWebsite: "",
     Thumbnail: ""
   }
-];
-
-export const events: Event[] = [
-  {
-    Name: "LoginRadius IO Launch",
-    Venue: "91Springboard, Kondapur, Hyderabad",
-    Tags: ["Engineering", "cIAM"],
-    Datetime: "2020-04-01T12:30:00Z",
-    Presenters: [
-      {
-        Name: "ravi.ghanta@loginradius.com",
-        Thumbnail: "https://github.com/ravitejag.png?size=460"
-      },
-      {
-        Name: "saikiran.babladi@loginradius.com"
-      }
-    ],
-    RegisterURL: "https://loginradius.com/events/register?id=123",
-    Links: [
-      {
-        name: "PPT",
-        url: "https://twitter.com/__grt__"
-      },
-      {
-        name: "Photos",
-        url: "https://github.com/ravitejag"
-      }
-    ]
-  }
-];
-
-export const talks = [
-  {
-    name: "Demo Day",
-    venue: "91Springboard",
-    categories: ["Engineering"],
-    presenters: [
-      "ravi.ghanta@loginradius.com",
-      "saikiran.babladi@loginradius.com"
-    ],
-    links: [
-      {
-        name: "PPT",
-        url: "https://twitter.com/__grt__"
-      },
-      {
-        name: "Photos",
-        url: "https://github.com/ravitejag"
-      }
-    ],
-    thumbnail: "https://github.com/ravitejag.png?size=460"
-  }
-];
-
-export const hackathons = [
-  {
-    name: "Demo Day",
-    venue: "91Springboard",
-    categories: ["All"],
-    presenters: [
-      "ravi.ghanta@loginradius.com",
-      "saikiran.babladi@loginradius.com"
-    ],
-    links: [
-      {
-        name: "PPT",
-        url: "https://twitter.com/__grt__"
-      },
-      {
-        name: "Photos",
-        url: "https://github.com/ravitejag"
-      }
-    ],
-    thumbnail: "https://github.com/ravitejag.png?size=460"
-  }
-];
-
-export const opensourcerepos = [
-  {
-    name: "JS SDK",
-    description: "lorem ipsum",
-    tags: ["All"],
-    links: [
-      {
-        name: "Github",
-        url: "https://github.com/ravitejag"
-      },
-      {
-        name: "Live",
-        url: "https://github.com/ravitejag"
-      }
-    ],
-    thumbnail: "https://github.com/ravitejag.png?size=460"
-  }
-];
-
-export const categories = [
-  "All",
-  "Software Engineer",
-  "DevOps Engineer",
-  "Director",
-  "QA Engineer",
-  "Support Engineer",
-  "Customer Success",
-  "Marketing",
-  "Solution Engineer"
 ];

@@ -1,42 +1,74 @@
 import * as React from "react";
-import { People } from "../constants/data";
+import { PeopleSchema } from "../constants/data";
+import { Image, Popup } from "semantic-ui-react";
 
-const UserCard: React.FC<People> = props => {
+export interface UserCardProps extends PeopleSchema {
+  onClick?: (people: PeopleSchema) => void;
+}
+const UserCard: React.FC<UserCardProps> = ({ onClick, ...props }) => {
   const social = getSocialInfo(props);
 
   return (
-    <div className="col-md-6 col-lg-4 item">
-      <div className="box">
-        <img
-          className="rounded-circle"
+    <Popup
+      content={props.Expertat ? "Expert at " + props.Expertat : ""}
+      header={props.Name}
+      trigger={
+        <Image
           src={
             props.Thumbnail ||
             `https://ui-avatars.com/api/?name=${props.Name}&size=460`
           }
-          alt={props.Name}
+          avatar
+          size="tiny"
+          onClick={() => onClick && onClick(props)}
+          className="m-2"
+          style={{ cursor: "pointer" }}
         />
-        <h3 className="name">{props.Name}</h3>
-        <div className="title">{props.Category}</div>
-        <div className="social mt-4">
-          {social.map((soc, index) => {
-            return (
-              <a
-                key={index.toString()}
-                href={soc.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className={`fa fa-${soc.icon}`}></i>
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+      }
+    />
+    // <div className="user-heads">
+    //   <img
+    //     className="rounded-circle headshots"
+    //     src={
+    //   props.Thumbnail ||
+    //   `https://ui-avatars.com/api/?name=${props.Name}&size=460`
+    // }
+    //     alt={props.Name}
+    //     title={props.Name}
+    //   />
+    // </div>
+    // <div className="col-md-6 col-lg-4 item">
+    //   <div className="box">
+    //     <img
+    //       className="rounded-circle"
+    //       src={
+    //         props.Thumbnail ||
+    //         `https://ui-avatars.com/api/?name=${props.Name}&size=460`
+    //       }
+    //       alt={props.Name}
+    //     />
+    //     <h3 className="name">{props.Name}</h3>
+    //     <div className="title">{props.Category}</div>
+    //     <div className="social mt-4">
+    //       {social.map((soc, index) => {
+    //         return (
+    //           <a
+    //             key={index.toString()}
+    //             href={soc.url}
+    //             target="_blank"
+    //             rel="noopener noreferrer"
+    //           >
+    //             <i className={`fa fa-${soc.icon}`}></i>
+    //           </a>
+    //         );
+    //       })}
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
-function getSocialInfo(props: People) {
+function getSocialInfo(props: PeopleSchema) {
   const social = [];
   if (props.GithubURL) {
     social.push({ name: "github", url: props.GithubURL, icon: "github" });

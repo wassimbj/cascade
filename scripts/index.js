@@ -53,11 +53,11 @@ csv().fromFile(csvFilePath).then(people => {
   ${Array.from(categories).map(cat => `"${cat}"`).join(",\n\t")}
 ];\n\n`;
 
-  fileContent += `export interface People {
+  fileContent += `export interface PeopleSchema {
   ${Object.keys(formatted[0]).map(key => `${key}: string`).join(",\n\t")}
 };\n\n`;
 
-  fileContent += `export const people: People[] = ${JSON.stringify(formatted, null, 2)};`
+  fileContent += `export const people: PeopleSchema[] = ${JSON.stringify(formatted, null, 2)};`
 
   fs.writeFileSync(outFilePath, fileContent);
   // fs.writeFileSync(jsonFilePath, JSON.stringify({ categories: Array.from(categories), people: formatted }, null, 4))
