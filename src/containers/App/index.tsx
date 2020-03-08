@@ -1,20 +1,34 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router";
-// Containers
-import Event from "../Event";
-import Hackathon from "../Hackathon";
-import Navigation from "../Navigation";
-import OpenSource from "../OpenSource";
-import People from "../People";
-import Talk from "../Talk";
 // Style
 import "./App.scss";
+// Containers
+import Navigation from "../Navigation";
+const Event = React.lazy(() => import("../Event"));
+const Hackathon = React.lazy(() => import("../Hackathon"));
+const OpenSource = React.lazy(() => import("../OpenSource"));
+const People = React.lazy(() => import("../People"));
+const Talk = React.lazy(() => import("../Talk"));
 
 interface AppProps {}
 interface AppState {}
 
 class App extends React.Component<AppProps, AppState> {
   render() {
+    const fallback = (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          width: "100%"
+        }}
+      >
+        Please wait...
+      </div>
+    );
+
     return (
       <React.Fragment>
         <Navigation
@@ -28,11 +42,51 @@ class App extends React.Component<AppProps, AppState> {
           ]}
         />
         <Switch>
-          <Route exact path="/people" component={People} />
-          <Route exact path="/event" component={Event} />
-          <Route exact path="/talk" component={Talk} />
-          <Route exact path="/hackathon" component={Hackathon} />
-          <Route exact path="/opensource" component={OpenSource} />
+          <Route
+            exact
+            path="/people"
+            render={() => (
+              <React.Suspense fallback={fallback}>
+                <People />
+              </React.Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/event"
+            render={() => (
+              <React.Suspense fallback={fallback}>
+                <Event />
+              </React.Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/talk"
+            render={() => (
+              <React.Suspense fallback={fallback}>
+                <Talk />
+              </React.Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/hackathon"
+            render={() => (
+              <React.Suspense fallback={fallback}>
+                <Hackathon />
+              </React.Suspense>
+            )}
+          />
+          <Route
+            exact
+            path="/opensource"
+            render={() => (
+              <React.Suspense fallback={fallback}>
+                <OpenSource />
+              </React.Suspense>
+            )}
+          />
           <Redirect to="/people" />
         </Switch>
       </React.Fragment>

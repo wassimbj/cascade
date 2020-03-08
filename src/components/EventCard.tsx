@@ -1,7 +1,6 @@
-import React from "react";
 import moment from "moment";
+import React from "react";
 import { Event } from "../constants/data";
-import { Link } from "react-router-dom";
 export interface EventCardProps extends Event {}
 
 export interface EventCardState {
