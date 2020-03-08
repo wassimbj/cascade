@@ -1,22 +1,27 @@
 import React from "react";
 import { RouteComponentProps, withRouter } from "react-router-dom";
-import UserCard from "../../components/UserCard";
-import { people, PeopleSchema } from "../../constants/data";
+import UserCard from "../../components/UserCard/index";
+import { people, PeopleSchema } from "../../constants/peopleData";
 import "./Team.scss";
+import { Modal, Image, Header, Popup } from "semantic-ui-react";
 
 interface PeopleProps extends RouteComponentProps {}
-interface PeopleState {}
+interface PeopleState {
+  selectedProfile?: PeopleSchema;
+}
 
 class People extends React.Component<PeopleProps, PeopleState> {
   constructor(props: PeopleProps) {
     super(props);
-    this.state = {};
+    this.state = {
+      selectedProfile: undefined
+    };
   }
 
   private _getPeopleCategory = (people: PeopleSchema[]) => {
     const cat: Map<string, PeopleSchema[]> = new Map();
     people.forEach(peep => {
-      const catName = /Engineer/g.test(peep.Category)
+      const catName = /(?:Engineer|Developer)/g.test(peep.Category)
         ? "Engineering"
         : /(?:Director|Analyst)/g.test(peep.Category)
         ? "Product Management"
@@ -28,8 +33,40 @@ class People extends React.Component<PeopleProps, PeopleState> {
     return cat;
   };
 
+  _getSocialInfo = (profile?: PeopleSchema) => {
+    if (profile === undefined) return [];
+
+    const social = [];
+    if (profile.GithubURL) {
+      social.push({ name: "github", url: profile.GithubURL, icon: "github" });
+    }
+    if (profile.Medium) {
+      social.push({ name: "medium", url: profile.Medium, icon: "medium" });
+    }
+    if (profile.PersonalBlogURL) {
+      social.push({ name: "blog", url: profile.PersonalBlogURL, icon: "user" });
+    }
+    if (profile.PersonalWebsite) {
+      social.push({
+        name: "website",
+        url: profile.PersonalWebsite,
+        icon: "portrait"
+      });
+    }
+    if (profile.StackOverFlow) {
+      social.push({
+        name: "stack-overflow",
+        url: profile.StackOverFlow,
+        icon: "stack-overflow"
+      });
+    }
+    return social;
+  };
+
   render() {
     const peopleCat = this._getPeopleCategory(people);
+    const { selectedProfile } = this.state;
+    let socialInfo = this._getSocialInfo(selectedProfile);
 
     return (
       <div className="team-boxed">
@@ -48,14 +85,84 @@ class People extends React.Component<PeopleProps, PeopleState> {
                 <div className="row">
                   {(peopleCat.get(category) || []).map((peep, index) => {
                     return (
-                      <UserCard key={index} {...peep} onClick={console.log} />
+                      <UserCard
+                        key={index}
+                        {...peep}
+                        onClick={profile =>
+                          this.setState({ selectedProfile: profile })
+                        }
+                      />
                     );
                   })}
                 </div>
-                <div className="divider"></div>
               </div>
             );
           })}
+
+          <Modal
+            open={selectedProfile !== undefined}
+            onClose={() => this.setState({ selectedProfile: undefined })}
+            size="small"
+            centered
+            style={{ height: "max-content", margin: "25% auto" }}
+          >
+            <Modal.Content image>
+              <Image
+                wrapped
+                size="medium"
+                src={
+                  selectedProfile?.Thumbnail ||
+                  `https://ui-avatars.com/api/?name=${selectedProfile?.Name}&size=460`
+                }
+              />
+              <Modal.Description>
+                <Header>{selectedProfile?.Name}</Header>
+                <i>{selectedProfile?.Category}</i>
+
+                {/* Expertise */}
+                <p className="mt-4">
+                  I'm expert at {selectedProfile?.Expertat}
+                </p>
+
+                {/* Can work on */}
+                {selectedProfile?.CanWorkOn && (
+                  <p className="mt-1">
+                    I can also work on {selectedProfile.CanWorkOn}
+                  </p>
+                )}
+
+                {/* Social */}
+                {socialInfo.length ? (
+                  <div className="mt-1">
+                    <i>Find me on</i>
+                    <br />
+                    {socialInfo.map((soc, index) => {
+                      return (
+                        <Popup
+                          key={index}
+                          content={soc.name}
+                          inverted
+                          position="top center"
+                          offset="0 10px"
+                          trigger={
+                            <a
+                              href={soc.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mr-3"
+                              style={{ cursor: "pointer" }}
+                            >
+                              <i className={`fa fa-2x fa-${soc.icon}`}></i>
+                            </a>
+                          }
+                        />
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
         </div>
       </div>
     );
