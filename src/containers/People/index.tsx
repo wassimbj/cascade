@@ -16,8 +16,13 @@ class People extends React.Component<PeopleProps, PeopleState> {
   private _getPeopleCategory = (people: PeopleSchema[]) => {
     const cat: Map<string, PeopleSchema[]> = new Map();
     people.forEach(peep => {
-      const current = cat.get(peep.Category);
-      cat.set(peep.Category, current ? [...current, peep] : [peep]);
+      const catName = /Engineer/g.test(peep.Category)
+        ? "Engineering"
+        : /(?:Director|Analyst)/g.test(peep.Category)
+        ? "Product Management"
+        : peep.Category;
+      const current = cat.get(catName);
+      cat.set(catName, current ? [...current, peep] : [peep]);
     });
 
     return cat;
