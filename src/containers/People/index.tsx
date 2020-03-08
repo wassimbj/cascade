@@ -4,6 +4,7 @@ import UserCard from "../../components/UserCard/index";
 import { people, PeopleSchema } from "../../constants/peopleData";
 import "./Team.scss";
 import { Modal, Image, Header, Popup } from "semantic-ui-react";
+import qs from "qs";
 
 interface PeopleProps extends RouteComponentProps {}
 interface PeopleState {
@@ -13,8 +14,17 @@ interface PeopleState {
 class People extends React.Component<PeopleProps, PeopleState> {
   constructor(props: PeopleProps) {
     super(props);
+
+    // Add selected profile from query
+    const query = qs.parse(props.location.search, { ignoreQueryPrefix: true });
+    let profile: PeopleState["selectedProfile"];
+
+    if (query.sel) {
+      profile = people.find(peep => peep.Email === query.sel);
+    }
+
     this.state = {
-      selectedProfile: undefined
+      selectedProfile: profile
     };
   }
 
@@ -63,6 +73,25 @@ class People extends React.Component<PeopleProps, PeopleState> {
     return social;
   };
 
+  // Utils
+  _updateURLQuery = (add?: { [key: string]: string }, remove?: string[]) => {
+    const { location, history } = this.props;
+    const current = qs.parse(location.search, { ignoreQueryPrefix: true });
+    const newQuery = { ...(current || {}), ...(add || {}) };
+
+    if (remove) {
+      remove.forEach(param => {
+        delete newQuery[param];
+      });
+    }
+
+    history.push(
+      `${location.pathname}/?${Object.keys(newQuery).map(
+        q => q + "=" + newQuery[q]
+      )}`
+    );
+  };
+
   render() {
     const peopleCat = this._getPeopleCategory(people);
     const { selectedProfile } = this.state;
@@ -88,9 +117,10 @@ class People extends React.Component<PeopleProps, PeopleState> {
                       <UserCard
                         key={index}
                         {...peep}
-                        onClick={profile =>
-                          this.setState({ selectedProfile: profile })
-                        }
+                        onClick={profile => {
+                          this.setState({ selectedProfile: profile });
+                          this._updateURLQuery({ sel: profile.Email });
+                        }}
                       />
                     );
                   })}
@@ -101,7 +131,10 @@ class People extends React.Component<PeopleProps, PeopleState> {
 
           <Modal
             open={selectedProfile !== undefined}
-            onClose={() => this.setState({ selectedProfile: undefined })}
+            onClose={() => {
+              this.setState({ selectedProfile: undefined });
+              this._updateURLQuery(undefined, ["sel"]);
+            }}
             size="small"
             centered
             style={{ height: "max-content", margin: "25% auto" }}
