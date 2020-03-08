@@ -1,11 +1,11 @@
 const csv = require("csvtojson")
 const fs = require("fs");
+const path = require("path");
 
 const csvFilePath = "scripts/Developers Master Sheet - Master Sheet.csv"
 
-const outDir = "./scripts/out";
-// const jsonFilePath = `${outDir}/Developers Master Sheet - Master Sheet.json`
-const outFilePath = `${outDir}/data.tsx`;
+const outDir = path.join(__dirname, "../src/constants");
+const outFilePath = `${outDir}/peopleData.tsx`;
 
 try {
   if (!fs.statSync(csvFilePath).isFile()) {
@@ -59,6 +59,7 @@ csv().fromFile(csvFilePath).then(people => {
 
   fileContent += `export const people: PeopleSchema[] = ${JSON.stringify(formatted, null, 2)};`
 
+
+  console.log(`Writing to: ${outFilePath}`)
   fs.writeFileSync(outFilePath, fileContent);
-  // fs.writeFileSync(jsonFilePath, JSON.stringify({ categories: Array.from(categories), people: formatted }, null, 4))
 })
