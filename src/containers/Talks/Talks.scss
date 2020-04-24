@@ -28,7 +28,7 @@ $background_white: #fff;
   .tab-buttons {
     margin-top: 30px;
     width: 200px;
-    margin: 30px auto 0 auto;
+    margin-left: 25%;
     cursor: pointer;
     .t-btn {
       flex-grow: 1;
@@ -70,15 +70,6 @@ $background_white: #fff;
         margin: 1em;
         color: #c89b6e;
       }
-      .timer-box {
-        background-color: #1a2228;
-        font-weight: 700;
-        .time {
-          flex-grow: 1;
-          color: #fff;
-        }
-        margin: 1em 0;
-      }
       .register {
         margin: 0px 10px 0px;
         font-size: 16px;
@@ -109,23 +100,8 @@ $background_white: #fff;
         }
       }
       img {
-        width: 70px;
-        height: 70px;
-        margin-right: 10px;
-        background: url(../../assets/images/lrLogo.png);
-      }
-    }
-  }
-  .social {
-    font-size: 18px;
-    color: $color_light_grey;
-    a {
-      color: inherit;
-      margin: 0 10px;
-      display: inline-block;
-      opacity: 0.7;
-      &:hover {
-        opacity: 1;
+        background: unset !important;
+        width: 45px !important;
       }
     }
   }
@@ -142,3 +118,4 @@ $background_white: #fff;
     }
   }
 }
+

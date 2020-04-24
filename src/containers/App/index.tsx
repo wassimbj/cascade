@@ -8,7 +8,7 @@ const Event = React.lazy(() => import("../Event"));
 const Hackathon = React.lazy(() => import("../Hackathon"));
 const OpenSource = React.lazy(() => import("../OpenSource"));
 const People = React.lazy(() => import("../People"));
-const Talk = React.lazy(() => import("../Talk"));
+const Talk = React.lazy(() => import("../Talks"));
 
 interface AppProps {}
 interface AppState {}

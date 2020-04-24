@@ -1,6 +1,6 @@
 import moment from "moment";
 import React from "react";
-import { Event } from "../constants/data";
+import { Event } from "../constants/eventData";
 export interface EventCardProps extends Event {}
 
 export interface EventCardState {
@@ -14,7 +14,7 @@ class EventCard extends React.Component<EventCardProps, EventCardState> {
       moment(this.props.Datetime).diff(moment().utc())
     );
     this.state = {
-      duration
+      duration,
     };
     this._startTimer();
   }
@@ -39,24 +39,41 @@ class EventCard extends React.Component<EventCardProps, EventCardState> {
             </a>
           </div>
           {this.state.duration && this._eventTimer(this.state.duration)}
-          <h5>
-            <u>{"Our Speakers"}</u>
-          </h5>
-          <div className="speakers d-flex">
-            {this.props.Presenters.map((press, index) => (
-              <div key={index} className="column m-2 d-flex flex-column">
-                <img
-                  className="rounded-circle text-center m-auto"
-                  src={
-                    press.Thumbnail ||
-                    `https://ui-avatars.com/api/?name=${press.Name}&size=460`
-                  }
-                  alt={press.Name}
-                />
-                <span>{press.Name}</span>
-              </div>
-            ))}
-          </div>
+          {this.props.Category === "TOHOST" ? (
+            <>
+              <h5>
+                <u>{"Our Speakers"}</u>
+              </h5>
+              <div className="speakers d-flex">
+                {this.props.Presenters?.map((press, index) => (
+                  <div key={index} className="column m-2 d-flex flex-column">
+                    <img
+                      className="rounded-circle text-center m-auto"
+                      src={
+                        press.Thumbnail ||
+                        `https://ui-avatars.com/api/?name=${press.Name}&size=460`
+                      }
+                      alt={press.Name}
+                    />
+                    <span>{press.Name}</span>
+                  </div>
+                ))}
+              </div>{" "}
+            </>
+          ) : (
+            this.props.Attendees && <>
+              <h5>
+                <u>{"Attendees"}</u>
+              </h5>
+              <div className="speakers d-flex">
+                {this.props.Attendees?.split("/").map((attendee, index) => (
+                  <div key={index} className="column m-2 d-flex flex-column">
+                    <span>{attendee}</span>
+                  </div>
+                ))}
+              </div>{" "}
+            </>
+          )}
         </div>
       </div>
     );

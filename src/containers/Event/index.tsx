@@ -1,12 +1,20 @@
 import React from "react";
 import "./Event.scss";
-import { events } from "../../constants/data";
+import { events } from "../../constants/eventData";
 import EventCard from "../../components/EventCard";
 
-interface AppProps {}
-interface AppState {}
+interface EventProps {}
+interface EventState {
+  category: "TOATTEND" | "TOHOST";
+}
 
-class Event extends React.Component<AppProps, AppState> {
+class Event extends React.Component<EventProps, EventState> {
+  constructor(props: EventProps) {
+    super(props);
+    this.state = {
+      category: "TOHOST",
+    };
+  }
   render() {
     return (
       <div className="team-boxed">
@@ -18,10 +26,35 @@ class Event extends React.Component<AppProps, AppState> {
               loginradius. You will find the list below.
             </p>
           </div>
+          <div className="tab-buttons d-flex">
+            <div
+              className="t-btn"
+              style={{
+                backgroundColor: `${
+                  this.state.category === "TOHOST" ? "#333" : "#ccc"
+                }`,
+              }}
+              onClick={() => this.setState({ category: "TOHOST" })}
+            >
+              To Host
+            </div>
+            <div
+              className="t-btn"
+              style={{
+                backgroundColor: `${
+                  this.state.category === "TOATTEND" ? "#333" : "#ccc"
+                }`,
+              }}
+              onClick={() => this.setState({ category: "TOATTEND" })}
+            >
+              To Attend
+            </div>
+          </div>
           <div className="row people">
-            {events.map((eve, index) => (
-              <EventCard {...eve} />
-            ))}
+            {events.map(
+              (eve, index) =>
+                eve.Category === this.state.category && <EventCard {...eve} />
+            )}
           </div>
         </div>
       </div>
