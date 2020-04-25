@@ -10,7 +10,7 @@ const TalkCard: React.SFC<TalkCardProps> = ({ ...props }) => {
       <div className="box">
         <h3 className="name">{props.Topic}</h3>
         <p className="title">{props.Place}</p>
-        <img src={icon} alt="tal-icon" />
+        <img className="icon" src={icon} alt="tal-icon" />
         <div className="register">
           <a href={props.PPTLink} target="blank" className="btn btn-common">
             PPT Link

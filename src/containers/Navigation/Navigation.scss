@@ -16,7 +16,6 @@ $border_color_2: #636363;
 .header-dark {
 	background: #444;
 	background-size: cover;
-	padding-bottom: 80px;
 	.navbar {
 		background: transparent;
 		padding-top: 0;
@@ -166,7 +165,6 @@ $border_color_2: #636363;
 }
 @media (min-width:768px) {
 	.header-dark {
-		padding-bottom: 120px;
 		.navbar {
 			padding-top: .75rem;
 			padding-bottom: .75rem;

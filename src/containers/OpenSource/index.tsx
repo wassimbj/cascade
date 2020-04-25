@@ -1,5 +1,7 @@
 import React from "react";
+import { openSource } from "../../constants/openSourceData";
 import "./OpenSource.scss";
+import OpenSourceCard from "../../components/OpenSourceCard";
 
 //! END
 
@@ -14,13 +16,16 @@ class OpenSource extends React.Component<AppProps, AppState> {
           <div className="intro">
             <h2 className="text-center">Open Source </h2>
             <p className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              adipisci ab nobis id quia a debitis, veniam numquam, ipsum iure
-              accusantium voluptatem commodi necessitatibus repudiandae
-              blanditiis consectetur. Aut, voluptatibus necessitatibus!
+              List of Contributers who had there contributions for the open
+              source projects
             </p>
           </div>
-          {/* OpenSource to be added */}
+          <div className="row people mt-4">
+            {openSource.map(
+              (os, index) =>
+                <OpenSourceCard {...os} />
+            )}
+          </div>
         </div>
       </div>
     );

@@ -2,7 +2,6 @@ import React from "react";
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import UserCard from "../../components/UserCard/index";
 import { people, PeopleSchema } from "../../constants/peopleData";
-import "./Team.scss";
 import { Modal, Image, Header, Popup } from "semantic-ui-react";
 import qs from "qs";
 
@@ -101,7 +100,7 @@ class People extends React.Component<PeopleProps, PeopleState> {
       <div className="team-boxed">
         <div className="container">
           <div className="intro">
-            <h1 className="text-center">People </h1>
+            <h2 className="text-center">People </h2>
             <p className="text-center">
               This is our team, who help you bring a delighful user experience!
             </p>

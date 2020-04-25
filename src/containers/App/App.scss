@@ -25,6 +25,18 @@ $background_white: #fff;
       margin-bottom: 0;
     }
   }
+  
+  .tab-buttons {
+    width: fit-content;
+    margin: 30px auto;
+    cursor: pointer;
+    .t-btn {
+      flex-grow: 1;
+      text-align: center;
+      padding: 1em;
+      color: #fff;
+    }
+  }
   .categories {
     display: flex;
     justify-content: space-around;
@@ -48,45 +60,85 @@ $background_white: #fff;
     .box {
       text-align: center;
       padding: 30px;
-      background-color: $background_white;
+      background-color: #fff;
       margin-bottom: 30px;
       .name {
-        font-weight: bold;
-        margin-top: 28px;
-        margin-bottom: 8px;
-        color: inherit;
+        font-size: 30px;
+        line-height: 46px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #282C35;
+        margin: 0;
       }
       .title {
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $color_white;
-        letter-spacing: 2px;
-        font-size: 13px;
+        margin: 1em 0;
+        color: #343434;
+        font-size: 18px;
+        font-style: italic;
+        margin-bottom: 22px;
+        line-height: 24px;
+      }
+      .icon {
+        width: 45px;
+        height: 70px;
+        margin-right: 10px;
+        background: unset;
       }
       .description {
-        font-size: 15px;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 1em;
+        color: #c89b6e;
       }
-      img {
-        max-width: 160px;
+      .timer-box {
+        background-color: #1a2228;
+        font-weight: 700;
+        .time {
+          flex-grow: 1;
+          color: #fff;
+        }
+        margin: 1em 0;
       }
-      .social {
-        width: 100%;
-        font-size: 18px;
-        color: $color_light_grey;
+      .register {
+        margin: 0px 10px 0px;
+        font-size: 16px;
+        padding: 12px 40px;
+        text-transform: uppercase;
+        .btn-common {
+          background-color: #333333;
+          position: relative;
+          z-index: 1;
+        }
         a {
-          color: inherit;
-          margin: 0 10px;
-          display: inline-block;
-          opacity: 0.7;
-          &:hover {
-            opacity: 1;
+          color: #fff;
+        }
+      }
+      .speakers {
+        .column {
+          flex-grow: 1;
+          margin-left: 5px;
+          padding: 5px;
+          overflow-wrap: break-word;
+          width: 40%;
+          span {
+            color: #5a3102;
+            font-weight: 700;
+            font-size: 12px;
+            margin-top: 5px;
           }
         }
       }
+      img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+      }
     }
   }
+}
+.header-dark {
+  padding: 0px;
 }
 @media (max-width: 767px) {
   .team-boxed {
