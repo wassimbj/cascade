@@ -55,6 +55,12 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                   })}
                 </ul>
               </div>
+              <Link
+                className={"nav-link ml-auto text-white"}
+                to="/logout"
+              >
+                {"Logout"}
+              </Link>
             </div>
           </nav>
         </div>
