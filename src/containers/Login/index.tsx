@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
+import config from "../../utils/config";
+
 export interface LoginProps extends RouteComponentProps {}
 
 const Login: React.SFC<LoginProps> = ({ history }) => {
@@ -9,7 +11,7 @@ const Login: React.SFC<LoginProps> = ({ history }) => {
     localStorage.setItem("token", token);
     history.push("/people");
   } else {
-    const url = `https://dev-home.devhub.lrinternal.com/auth.aspx?return_url=${window.location.origin}/login`;
+    const url = `${config.APP_URL}/auth.aspx?return_url=${window.location.origin}/login`;
     window.location.href = url;
   }
   return null;
