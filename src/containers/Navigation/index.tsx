@@ -3,6 +3,8 @@ import { RouteComponentProps } from "react-router";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import "./Navigation.scss";
 
+import config from "../../utils/config";
+
 export interface NavigationProps extends RouteComponentProps {
   title: string;
   sections: {
@@ -55,12 +57,11 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                   })}
                 </ul>
               </div>
-              <Link
-                className={"nav-link ml-auto text-white"}
-                to="/logout"
-              >
-                {"Logout"}
-              </Link>
+              {config.ENABLE_LOGIN && (
+                <Link className={"nav-link ml-auto text-white"} to="/logout">
+                  {"Logout"}
+                </Link>
+              )}
             </div>
           </nav>
         </div>
